@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Software Fun</title>
+<title>Learn Oracle 12c</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="styles.css">
@@ -9,19 +9,27 @@
 <body>
 
  <header>
-  <p>Opinion Poll</p>
+  <h3>Oracle SQL 12c Tips</h3>
  </header>
 
  <main>
-  <form>
-   <input type="radio" id="option1">
-   <label for="option1">Who do you think will win?</label>
-  </form>
+ <h3 class="snippet_header">Create A Table</h3>
+ <pre>
+CREATE TABLE category(
+ category_id NUMBER NOT NULL,
+ PRIMARY KEY(category_id)
+);
+ </pre>
+ 
+ <h3 class="snippet_header">Insert Data</h3>
+ <pre>
+INSERT INTO category(category_id)
+VALUES(2342223);
+ </pre>
+
  </main>
 
- <footer>
-   <p>Footer</p>
- </footer>
+ <footer></footer>
 
 </body>
 </html>
