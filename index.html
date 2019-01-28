@@ -13,19 +13,93 @@
  </header>
 
  <main>
+
+ <aside>
  <h3 class="snippet_header">Create A Table</h3>
  <pre>
+  <code>
 CREATE TABLE category(
  category_id NUMBER NOT NULL,
  PRIMARY KEY(category_id)
 );
+  </code>
  </pre>
+ </aside>
  
+ <aside>
  <h3 class="snippet_header">Insert Data</h3>
  <pre>
+	 <code>
 INSERT INTO category(category_id)
-VALUES(2342223);
+VALUES(2342);
+	</code>
  </pre>
+ </aside>
+
+ <aside>
+ <h3 class="snippet_header">Primary Key Constraint</h3>
+ <pre>
+	 <code>
+CREATE TABLE product(
+ product_id NUMBER NOT NULL
+ CONSTRAINT prod_id_pk PRIMARY KEY
+);
+	</code>
+ </pre>
+ </aside>
+
+ <aside>
+ <h3 class="snippet_header">Add A Column To The Table With No Data</h3>
+ <pre>
+	</code>
+ALTER TABLE product
+ADD product_name VARCHAR2(20) NOT NULL;
+	</code>
+ </pre>
+ </aside>
+
+ <aside>
+ <h3 class="snippet_header">Add A Column To The Table With Data</h3>
+ <pre>
+	</code>
+ALTER TABLE product
+ADD product_name VARCHAR2(20);
+	</code>
+ </pre>
+ </aside>
+
+ <aside>
+ <h3 class="snippet_header">Enrollment System</h3>
+ <pre>
+	 <code>
+CREATE TABLE teacher(
+ teacher_id NUMBER NOT NULL,
+ PRIMARY KEY (teacher_id)
+);
+
+CREATE TABLE student(
+ student_id NUMBER NOT NULL,
+ PRIMARY KEY (student_id)
+);
+
+CREATE TABLE course(
+ course_id NUMBER NOT NULL,
+ teacher_id NUMBER NOT NULL,
+ FOREIGN KEY (teacher_id) REFERENCES teacher(teacher_id),
+ PRIMARY KEY (course_id)
+);
+
+CREATE TABLE enrollment(
+ enrollment_id NUMBER NOT NULL,
+ course_id NUMBER NOT NULL,
+ student_id NUMBER NOT NULL,
+ FOREIGN KEY (course_id) REFERENCES course(course_id),
+ FOREIGN KEY (student_id) REFERENCES student(student_id),
+ PRIMARY KEY (enrollment_id)
+);
+ </code>
+ </pre>
+ </aside>
 
  </main>
 
